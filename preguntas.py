@@ -9,6 +9,7 @@ selección de las n variables más relevantes usando una prueba f.
 # pylint: disable=invalid-name
 # pylint: disable=unsubscriptable-object
 
+from cgi import test
 import pandas as pd
 
 
@@ -18,20 +19,19 @@ def pregunta_01():
     -------------------------------------------------------------------------------------
     """
     # Lea el archivo `insurance.csv` y asignelo al DataFrame `df`
-    df = ____
+    df = pd.read_csv('insurance.csv')
 
     # Asigne la columna `charges` a la variable `y`.
-    ____ = ____
+    y = df['charges']
 
     # Asigne una copia del dataframe `df` a la variable `X`.
-    ____ = ____.____(____)
+    X = df.copy()
 
     # Remueva la columna `charges` del DataFrame `X`.
-    ____.____(____)
+    X.drop('charges', axis= 1, inplace = True)
 
     # Retorne `X` y `y`
     return X, y
-
 
 def pregunta_02():
     """
